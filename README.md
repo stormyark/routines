@@ -1,90 +1,84 @@
-# Obsidian Sample Plugin
+<div align="center">
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+# 🌅 Morning Routine for Obsidian
 
-This project uses TypeScript to provide type checking and documentation.
-The repo depends on the latest plugin API (obsidian.d.ts) in TypeScript Definition format, which contains TSDoc comments describing what it does.
+*Start your day right. Track your mood, measure your productivity, and effortlessly backup your vault.*
 
-This sample plugin demonstrates some of the basic functionality the plugin API can do.
-- Adds a ribbon icon, which shows a Notice when clicked.
-- Adds a command "Open modal (simple)" which opens a Modal.
-- Adds a plugin setting tab to the settings page.
-- Registers a global click event and output 'click' to the console.
-- Registers a global interval which logs 'setInterval' to the console.
+[![Obsidian Downloads](https://img.shields.io/badge/Obsidian-Plugin-7A36F4.svg?logo=obsidian)](#)
+[![TypeScript](https://img.shields.io/badge/Built%20with-TypeScript-blue.svg)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## First time developing plugins?
+</div>
 
-Quick starting guide for new plugin devs:
+---
 
-- Check if [someone already developed a plugin for what you want](https://obsidian.md/plugins)! There might be an existing plugin similar enough that you can partner up with.
-- Make a copy of this repo as a template with the "Use this template" button (login to GitHub if you don't see it).
-- Clone your repo to a local development folder. For convenience, you can place this folder in your `.obsidian/plugins/your-plugin-name` folder.
-- Install NodeJS, then run `npm i` in the command line under your repo folder.
-- Run `npm run dev` to compile your plugin from `main.ts` to `main.js`.
-- Make changes to `main.ts` (or create new `.ts` files). Those changes should be automatically compiled into `main.js`.
-- Reload Obsidian to load the new version of your plugin.
-- Enable plugin in settings window.
-- For updates to the Obsidian API run `npm update` in the command line under your repo folder.
+## ✨ Overview
 
-## Releasing new releases
+**Morning Routine** is an Obsidian plugin designed to simplify and supercharge your daily journaling habit. 
 
-- Update your `manifest.json` with your new version number, such as `1.0.1`, and the minimum Obsidian version required for your latest release.
-- Update your `versions.json` file with `"new-plugin-version": "minimum-obsidian-version"` so older versions of Obsidian can download an older version of your plugin that's compatible.
-- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: https://github.com/obsidianmd/obsidian-sample-plugin/releases
-- Upload the files `manifest.json`, `main.js`, `styles.css` as binary attachments. Note: The manifest.json file must be in two places, first the root path of your repository and also in the release.
-- Publish the release.
+Instead of manually creating your daily note, dealing with templates, and remembering to push your vault to your Git repository, Morning Routine gives you a beautifully seamless start to your day. With a single click, answer a few quick questions and let the plugin handle the rest: note creation, formatting, and even remote Git backups!
 
-> You can simplify the version bump process by running `npm version patch`, `npm version minor` or `npm version major` after updating `minAppVersion` manually in `manifest.json`.
-> The command will bump version in `manifest.json` and `package.json`, and add the entry for the new version to `versions.json`
+## 🚀 Features
 
-## Adding your plugin to the community plugin list
+- **🎛️ Quick-Entry Modal:** An intuitive popup to quickly log your wake-up time, current mood (1-10), and expected productivity level.
+- **📝 Automated Daily Notes:** Automatically generates a beautifully formatted markdown note for the day.
+- **📊 Dataview Integration:** Pre-configured with Dataview snippets to show you which notes you created and modified today.
+- **📂 Configurable Paths:** Choose exactly which folder your daily routine notes should be saved to.
+- **☁️ Auto-Backup (Git Seamless Sync):** Automatically runs `git add`, `git commit`, and `git push` to your remote repository the moment you submit your routine, ensuring your vault is always safely backed up. 
+- **⚡ Instant Open:** Automatically opens your newly minted daily note in the active workspace tab so you can immediately start expanding on your thoughts.
 
-- Check the [plugin guidelines](https://docs.obsidian.md/Plugins/Releasing/Plugin+guidelines).
-- Publish an initial version.
-- Make sure you have a `README.md` file in the root of your repo.
-- Make a pull request at https://github.com/obsidianmd/obsidian-releases to add your plugin.
+---
 
-## How to use
+## 📸 How It Works
 
-- Clone this repo.
-- Make sure your NodeJS is at least v16 (`node --version`).
-- `npm i` or `yarn` to install dependencies.
-- `npm run dev` to start compilation in watch mode.
+1. Click the **Sun Icon** (🌅) in your left-hand ribbon, or use the Command Palette (`Ctrl/Cmd + P`) and search for **Start Morning Routine**.
+2. An elegant modal will appear. 
+3. Adjust the **Time**, slide your **Mood** score, and gauge your **Productivity**.
+4. Click **Submit**.
+5. Boom! 💥 Your note is created, opened for you, and automatically pushed to your Git remote.
 
-## Manually installing the plugin
+---
 
-- Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
+## ⚙️ Requirements
 
-## Improve code quality with eslint
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
-- This project already has eslint preconfigured, you can invoke a check by running`npm run lint`
-- Together with a custom eslint [plugin](https://github.com/obsidianmd/eslint-plugin) for Obsidan specific code guidelines.
-- A GitHub action is preconfigured to automatically lint every commit on all branches.
+To get the most out of Morning Routine, ensure you have:
+1. **Obsidian** (Obviously!)
+2. **Git** installed on your system.
+3. Your vault setup mapped to a remote repository (e.g., GitHub, GitLab) so the automatic `git push` command can run successfully.
+4. **Dataview Plugin** (Optional, but highly recommended) - The generated daily note includes Dataview queries to show your daily activity block.
 
-## Funding URL
+---
 
-You can include funding URLs where people who use your plugin can financially support it.
+## 📦 Installation
 
-The simple way is to set the `fundingUrl` field to your link in your `manifest.json` file:
+*(Because this plugin might not be in the official community store yet, you can install it manually)*
 
-```json
-{
-    "fundingUrl": "https://buymeacoffee.com"
-}
-```
+### Manual Installation
+1. Download the latest release (`main.js`, `manifest.json`, `styles.css`).
+2. Navigate to your Obsidian vault's plugin directory: `/.obsidian/plugins/`
+3. Create a folder named `routines` (or your preferred name).
+4. Paste the downloaded files into this new folder.
+5. Reload Obsidian.
+6. Go to **Settings > Community Plugins** and enable **Morning Routine**.
 
-If you have multiple URLs, you can also do:
+---
 
-```json
-{
-    "fundingUrl": {
-        "Buy Me a Coffee": "https://buymeacoffee.com",
-        "GitHub Sponsor": "https://github.com/sponsors",
-        "Patreon": "https://www.patreon.com/"
-    }
-}
-```
+## 🛠️ Configuration
 
-## API Documentation
+Go to your Obsidian Settings and find **Morning Routine** under the Community Plugins list.
+Here you can configure:
 
-See https://docs.obsidian.md
+- **Daily Note Folder:** The specific folder where you want your morning routine notes to be saved (e.g., `Journal` or `Daily Notes`). If left blank, they will be created in the root directory.
+
+---
+
+## ❤️ Contributing & Support
+
+Feel free to open an issue or submit a pull request if you have ideas on how to make Morning Routine even better!
+
+If you find this plugin helpful for your daily workflow, consider giving the repository a ⭐️!
+
+---
+<div align="center">
+  <i>Built with ❤️ for the Obsidian Community</i>
+</div>
