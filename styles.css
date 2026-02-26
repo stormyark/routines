@@ -1,8 +1,35 @@
-/*
+/* Custom styles for Morning Routine Plugin */
+.morning-routine-modal {
+    max-width: 500px;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+.morning-routine-modal .setting-item {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--background-modifier-border);
+}
 
-If your plugin does not need CSS, delete this file.
+.morning-routine-modal .setting-item:last-child {
+    border-bottom: none;
+}
 
-*/
+.morning-routine-modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-accent);
+}
+
+.morning-routine-modal input[type="time"] {
+    cursor: pointer;
+    background-color: var(--background-primary);
+    border: 1px solid var(--background-modifier-border);
+    color: var(--text-normal);
+}
+
+.morning-routine-modal textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+.morning-routine-ribbon-class {
+    color: var(--icon-color-active);
+}
